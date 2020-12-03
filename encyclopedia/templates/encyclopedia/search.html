@@ -1,0 +1,15 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+    <h2 class="display-2">Found pages:</h2>
+    {% for page in found_pages %}
+
+        <li class="entry-link"><a href=/wiki/{{ page|iriencode }}>{{ page }}</a></li>
+    {% empty %}
+        <h3 class="no-item">No items found.</h3>
+    {% endfor %}
+{% endblock %}
